@@ -1,13 +1,16 @@
 clc; clear all; close all;
 addpath('./utils_matlab/')
+addpath(strjoin(strcat(['/Users/mars_zhang/Downloads/matlab_lib/gptoolbox-master/'],{'external','imageprocessing', 'images', 'matrix', 'mesh', 'mex', 'quat','utility','wrappers'}),':'))
 % this depends on gptoolbox: https://github.com/alecjacobson/gptoolbox
 
 % read the input mesh
-meshPath = './data_meshes/objs_original/bob.obj';
-numSubd = 2;
+% meshPath = './data_meshes/objs_original/bob.obj';
+meshPath = './data_meshes/zhl_objs_original/dfaust_template.ply';
+
+numSubd = 1;
 numData = 1;
-nV_variance = 100;
-nV_average = 300;
+nV_variance = 10;
+nV_average = 50;
 
 % extract mesh name
 [~, meshName, ~] = fileparts(meshPath);

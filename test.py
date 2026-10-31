@@ -17,7 +17,8 @@ NETPARAMS = 'netparams.dat'
 def main():
 
     # load hyper parameters
-    folder = sys.argv[1]
+    # folder = sys.argv[1]
+    folder = 'jobs/dfaust_template_10/'
     with open(folder + 'hyperparameters.json', 'r') as f:
         params = json.load(f)
     params['numSubd'] = 2 # number of subdivision levels at test time
@@ -25,7 +26,9 @@ def main():
     print(os.path.basename(sys.argv[2]))
 
     # load validation set
-    meshPath = [sys.argv[2]]
+    # meshPath = [sys.argv[2]]
+    # meshPath = ['jobs/dfaust_template_10/0_subd0.obj']
+    meshPath = ['dfaust/upsample_1723.obj']
     T = TestMeshes(meshPath, params['numSubd'])
     T.computeParameters()
     if not torch.cuda.is_available():

@@ -7,10 +7,12 @@ from models import *
 NETPARAMS = 'netparams.dat'
 
 # should run the file like "python train.py ./path/to/folder/"
+# python train.py ./jobs/dfaust_template_10
 def main():
 
     # load hyper parameters
-    folder = sys.argv[1]
+    # folder = sys.argv[1]
+    folder = './jobs/dfaust_template_10/'
     with open(folder + 'hyperparameters.json', 'r') as f:
         params = json.load(f)
 
